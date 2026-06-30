@@ -141,3 +141,60 @@ html,body{
 
 /* flying coin to the jar */
 .flycoin{ position:fixed; font-size:42px; z-index:50; pointer-events:none; transition:transform .6s cubic-bezier(.4,0,.2,1), opacity .6s; }
+
+/* ---------- words: question prompt + praise + button words ---------- */
+.prompt{
+  position:absolute; top:1.4vh; left:0; right:0; z-index:3; text-align:center;
+  font-size:clamp(20px, 4.4vh, 44px); font-weight:900; letter-spacing:.02em;
+  color:#fff; text-shadow:0 2px 0 rgba(0,0,0,.35); padding:0 .5em; line-height:1.1;
+}
+.praise{
+  position:absolute; inset:0; z-index:6; pointer-events:none;
+  display:flex; align-items:center; justify-content:center;
+  font-size:clamp(44px, 13vh, 130px); font-weight:900; color:var(--gold);
+  text-shadow:0 4px 0 rgba(0,0,0,.35); animation:praisePop 1s ease forwards;
+}
+@keyframes praisePop{ 0%{transform:scale(.3);opacity:0} 30%{transform:scale(1.15);opacity:1} 75%{opacity:1} 100%{transform:scale(1.05);opacity:0} }
+.choice .word{ font-weight:900; letter-spacing:.06em; }
+
+/* ---------- coin rides a big arrow (clear up/down) ---------- */
+.rider{ display:flex; flex-direction:column; align-items:center; gap:.4vh; }
+.rider .r-arrow{ font-size:clamp(80px, 24vh, 230px); line-height:1; }
+.rider .r-coin{ font-size:clamp(46px, 11vh, 110px); line-height:1; }
+.rider.up{ animation:riderUp 1.4s ease forwards; }
+.rider.down{ animation:riderDown 1.4s ease forwards; }
+@keyframes riderUp{ from{transform:translateY(22vh)} to{transform:translateY(-10vh)} }
+@keyframes riderDown{ from{transform:translateY(-20vh)} to{transform:translateY(12vh)} }
+
+/* arrowhead on the chart line */
+.chart-head{ position:absolute; right:5%; font-size:clamp(40px, 9vh, 92px); }
+.chart-head.up{ top:5%; } .chart-head.down{ bottom:5%; }
+
+/* ---------- Cohete (rocket / prepositioning) ---------- */
+.cohete .stage{ overflow:hidden; }
+.rocket{
+  position:absolute; left:50%; bottom:13%; transform:translateX(-50%);
+  background:none; border:none; line-height:1; padding:1.5vh 4vw;
+  font-size:clamp(90px, 27vh, 250px); filter:drop-shadow(0 8px 12px rgba(0,0,0,.45));
+}
+.rocket:active{ transform:translateX(-50%) scale(.9); }
+.pad{ position:absolute; left:50%; bottom:8%; transform:translateX(-50%);
+  width:48%; height:2.6vh; border-radius:20px; background:linear-gradient(#3a4780,#1c2350); }
+.fuel{ position:absolute; left:7%; right:7%; bottom:2%; height:3.2vh;
+  background:rgba(255,255,255,.14); border-radius:20px; overflow:hidden; }
+.fuel-bar{ height:100%; width:0%; border-radius:20px;
+  background:linear-gradient(90deg, var(--up), var(--gold), var(--down)); }
+.rocket.ride{ animation:rocketRide 1.2s cubic-bezier(.4,0,.3,1) forwards; }
+@keyframes rocketRide{ to{ bottom:74%; transform:translateX(-50%) scale(.75) rotate(-3deg); } }
+.rocket.gone{ animation:rocketGone .9s ease-in forwards; }
+@keyframes rocketGone{ to{ bottom:120%; transform:translateX(-50%) scale(.5); opacity:.6; } }
+
+/* ---------- Cuidado (risk / good vs scam) ---------- */
+.item{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; }
+.item .face{ font-size:clamp(90px, 30vh, 260px); line-height:1; }
+.item .badge{ position:absolute; top:14%; font-size:clamp(46px, 12vh, 120px); }
+.item.good .face{ filter:drop-shadow(0 0 22px rgba(31,199,125,.85)); }
+.item.bad  .face{ filter:drop-shadow(0 0 22px rgba(255,93,108,.95)); animation:shake .5s ease-in-out infinite; }
+@keyframes shake{ 0%,100%{transform:rotate(-5deg)} 50%{transform:rotate(5deg)} }
+.choice.safe{   background:radial-gradient(120% 120% at 50% 0%, #5cf0ad, var(--up)); }
+.choice.danger{ background:radial-gradient(120% 120% at 50% 0%, #ff97a1, var(--down)); }

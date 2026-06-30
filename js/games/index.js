@@ -1,11 +1,12 @@
 // The game registry. Order here = order on the home screen.
 // To add a game: create its module, import it, add it to the array.
-// `locked:true` shows a greyed-out "coming soon" card (the growth path).
+// `locked:true` would show a greyed-out "coming soon" card.
 import bullOrBear from './bull-or-bear.js';
+import cohete from './cohete.js';
+import cuidado from './cuidado.js';
 
 export const GAMES = [
-  bullOrBear,
-  // Coming as he grows — placeholders so the path is visible on screen:
-  { id:'preposition', title:'Cohete',  icon:'🚀', locked:true },  // ~6-8: prepositioning / catch the launch
-  { id:'risk',        title:'Cuidado', icon:'🚦', locked:true },  // ~6-8: risk & warning flags
+  bullOrBear,   // ~4: direction up/down (bullish/bearish)
+  cohete,       // ~6-8: prepositioning — get in before the launch
+  cuidado,      // ~6-8: risk / warning flags — good coin vs scam
 ];

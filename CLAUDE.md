@@ -23,7 +23,11 @@ dumbed down from grown-up crypto. Public repo, GitHub Pages, no backend, no buil
 - **Branding**: home is a flow header — "📈 Learning Crypto" (top) + greeting where **"Ignacio" is a
   gold, bigger, tappable button** (NAME const in app.js; tap = sparkle + sound). Title/manifest =
   "Learning Crypto" (repo stays `crypto-kids`).
-- **Hidden parent gesture**: long-press the wallet (1.5s) resets coins/stars.
+- **Progressive unlocks**: each game has a `requires` (⭐ needed) in `js/games/index.js`. First two
+  are free (0); Cuidado=2, Palabras=5, Sectores=10. A game is unlocked when `wallet.stars >= requires`.
+  Locked cards are greyed with a "🔒 N⭐" badge and don't navigate (boop + shake). First time a game
+  crosses its threshold it pulses with a gold ring + chime, once (persisted: `crypto-kids.announced.v1`).
+- **Hidden parent gesture**: long-press the wallet (1.5s) resets coins/stars (also re-locks games).
 - **Icons**: raster PNGs `icon-180/192/512.png` (generated from `icon.svg`) for the iOS Home Screen
   + manifest; SVG kept as supplementary. Regenerate by rendering `icon.svg` if the mark changes.
 - **No fail state**: right = chime + confetti + coin; wrong = soft boop + wobble + retry.

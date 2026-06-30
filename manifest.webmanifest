@@ -1,0 +1,14 @@
+{
+  "name": "Crypto Kids",
+  "short_name": "Crypto Kids",
+  "description": "Juegos de cripto para peques — empezar joven.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "fullscreen",
+  "orientation": "any",
+  "background_color": "#0e1430",
+  "theme_color": "#0e1430",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

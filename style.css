@@ -219,3 +219,16 @@ html,body{
   text-align:center; padding:0 .2em; line-height:1.05; }
 .choice.w1{ background:radial-gradient(120% 120% at 50% 0%, #8fd0ff, #3f9bff); }
 .choice.w2{ background:radial-gradient(120% 120% at 50% 0%, #ffd98f, #f7b500); }
+
+/* ---------- Sectores (sort coins into sectors — the complex one) ---------- */
+.sectores .coin-card{ position:absolute; inset:0; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; gap:.6vh; }
+.sectores .c-emoji{ font-size:clamp(80px, 24vh, 220px); line-height:1; }
+.sectores .c-name{ font-size:clamp(24px, 5vh, 52px); font-weight:900; color:#fff; }
+.sectores .c-ticker{ font-size:clamp(16px, 3vh, 30px); font-weight:800; letter-spacing:.14em; color:var(--gold); }
+/* 3 calm, equal buttons — no color implies a "right" one */
+.sectores .choices{ gap:2vmin; }
+.choice.sector{ background:radial-gradient(120% 120% at 50% 0%, #6f7bb8, #3b4790); color:#fff; }
+.choice.sector .ani{ font-size:clamp(40px, 13vh, 110px); }
+.choice.sector .word{ font-size:clamp(15px, 2.8vh, 30px); }
+.choice.sector.win{ background:radial-gradient(120% 120% at 50% 0%, #5cf0ad, var(--up)); color:#06121e; }

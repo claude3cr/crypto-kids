@@ -1,11 +1,12 @@
 // Minimal offline cache so "Add to Home Screen" keeps working with no network.
 // Bump CACHE when you change any shell file.
-const CACHE = 'crypto-kids-v4';
+const CACHE = 'crypto-kids-v5';
 const SHELL = [
-  './', './index.html', './style.css?v=4', './app.js?v=4', './audio.js',
+  './', './index.html', './style.css?v=5', './app.js?v=5', './audio.js',
   './translations.js',
   './js/games/index.js', './js/games/bull-or-bear.js',
   './js/games/cohete.js', './js/games/cuidado.js', './js/games/palabras.js',
+  './js/games/sectores.js',
   './manifest.webmanifest', './icon.svg',
 ];
 

@@ -19,15 +19,15 @@ function start(root, services){
   root.innerHTML = `
     <div class="game cuidado">
       <div class="stage" id="cdStage">
-        <div class="prompt">¿BUENO o MALO?</div>
+        <div class="prompt">¿BUENO o MALO?<span class="en">GOOD or BAD?</span></div>
         <div class="item" id="cdItem"></div>
       </div>
       <div class="choices">
         <button class="choice safe"   data-pick="good" aria-label="Sí, bueno">
-          <span class="ani">✅</span><span class="word">SÍ</span>
+          <span class="ani">✅</span><span class="word">SÍ</span><span class="en">SAFE</span>
         </button>
         <button class="choice danger" data-pick="bad" aria-label="No, cuidado">
-          <span class="ani">🛑</span><span class="word">NO</span>
+          <span class="ani">🛑</span><span class="word">NO</span><span class="en">SCAM</span>
         </button>
       </div>
     </div>`;
@@ -50,9 +50,9 @@ function newRound(){
   s.kind = Math.random() < 0.5 ? 'good' : 'bad';
   s.item.className = 'item ' + s.kind;
   if (s.kind === 'good'){
-    s.item.innerHTML = `<span class="badge">✅</span><span class="face">${GOOD[(Math.random()*GOOD.length)|0]}</span>`;
+    s.item.innerHTML = `<span class="face">${GOOD[(Math.random()*GOOD.length)|0]}</span><span class="badge">✅</span>`;
   } else {
-    s.item.innerHTML = `<span class="badge">⚠️</span><span class="face">${BAD[(Math.random()*BAD.length)|0]}</span>`;
+    s.item.innerHTML = `<span class="face">${BAD[(Math.random()*BAD.length)|0]}</span><span class="badge">⚠️</span>`;
   }
 }
 

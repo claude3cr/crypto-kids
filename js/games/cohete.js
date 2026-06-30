@@ -16,7 +16,7 @@ function start(root, services){
   root.innerHTML = `
     <div class="game cohete">
       <div class="stage" id="ckStage">
-        <div class="prompt">¡TOCA EL COHETE ANTES DE QUE DESPEGUE!</div>
+        <div class="prompt">¡TOCA EL COHETE ANTES DE QUE DESPEGUE!<span class="en">BUY EARLY!</span></div>
         <button class="rocket" id="ckRocket" aria-label="Cohete">🚀</button>
         <div class="pad"></div>
         <div class="fuel"><div class="fuel-bar" id="ckFuel"></div></div>

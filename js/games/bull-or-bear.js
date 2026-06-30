@@ -58,14 +58,14 @@ function start(root, services){
   root.innerHTML = `
     <div class="game">
       <div class="stage" id="bbStage">
-        <div class="prompt">¿SUBE o BAJA?</div>
+        <div class="prompt">¿SUBE o BAJA?<span class="en">UP or DOWN?</span></div>
       </div>
       <div class="choices">
         <button class="choice bull" data-dir="up" aria-label="Sube">
-          <span class="ani">🐂</span><span class="word">SUBE</span>
+          <span class="ani">🐂</span><span class="word">SUBE</span><span class="en">BULL</span>
         </button>
         <button class="choice bear" data-dir="down" aria-label="Baja">
-          <span class="ani">🐻</span><span class="word">BAJA</span>
+          <span class="ani">🐻</span><span class="word">BAJA</span><span class="en">BEAR</span>
         </button>
       </div>
     </div>`;

@@ -156,6 +156,11 @@ html,body{
 }
 @keyframes praisePop{ 0%{transform:scale(.3);opacity:0} 30%{transform:scale(1.15);opacity:1} 75%{opacity:1} 100%{transform:scale(1.05);opacity:0} }
 .choice .word{ font-weight:900; letter-spacing:.06em; }
+/* the real English crypto word (BULL/BEAR/SAFE/SCAM/BUY) — gold, secondary */
+.choice .en{ font-size:clamp(13px, 2.2vh, 24px); font-weight:800; letter-spacing:.1em;
+  color:rgba(6,18,30,.62); margin-top:-.2em; }
+.prompt .en{ display:block; font-size:clamp(13px, 2.4vh, 26px); font-weight:800;
+  letter-spacing:.12em; color:var(--gold); margin-top:.15em; }
 
 /* ---------- coin rides a big arrow (clear up/down) ---------- */
 .rider{ display:flex; flex-direction:column; align-items:center; gap:.4vh; }
@@ -192,7 +197,8 @@ html,body{
 /* ---------- Cuidado (risk / good vs scam) ---------- */
 .item{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; }
 .item .face{ font-size:clamp(90px, 30vh, 260px); line-height:1; }
-.item .badge{ position:absolute; top:14%; font-size:clamp(46px, 12vh, 120px); }
+.item .badge{ position:absolute; top:2%; z-index:2; font-size:clamp(46px, 12vh, 120px);
+  filter:drop-shadow(0 3px 6px rgba(0,0,0,.5)); }
 .item.good .face{ filter:drop-shadow(0 0 22px rgba(31,199,125,.85)); }
 .item.bad  .face{ filter:drop-shadow(0 0 22px rgba(255,93,108,.95)); animation:shake .5s ease-in-out infinite; }
 @keyframes shake{ 0%,100%{transform:rotate(-5deg)} 50%{transform:rotate(5deg)} }
